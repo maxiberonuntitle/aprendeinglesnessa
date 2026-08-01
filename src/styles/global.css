@@ -283,6 +283,7 @@ img {
   display: grid;
   place-items: end center;
   align-self: end;
+  grid-column: 2;
   height: 100%;
   min-height: min(88vh, 720px);
   pointer-events: none;
@@ -363,10 +364,6 @@ img {
   justify-items: start;
   grid-column: 1;
   padding-left: clamp(0.75rem, 3vw, 2.5rem);
-}
-
-.hero-portrait {
-  grid-column: 2;
 }
 
 .hero-inner {
