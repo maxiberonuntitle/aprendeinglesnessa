@@ -1,4 +1,5 @@
 import { getTopic } from '../data/topics'
+import { topicArt } from '../data/art'
 
 type Props = {
   topicId: string
@@ -29,11 +30,18 @@ export function TopicModes({
     )
   }
 
+  const cover = topicArt[topic.id]
+
   return (
     <main className="page">
       <button type="button" className="back-link" onClick={onBack}>
         ← Temas
       </button>
+      {cover && (
+        <div className="topic-hero-art">
+          <img src={cover} alt="" />
+        </div>
+      )}
       <div className="section-head">
         <h2>
           {topic.emoji} {topic.title}
