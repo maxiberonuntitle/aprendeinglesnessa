@@ -1,5 +1,6 @@
 import { topics } from '../data/topics'
 import type { Progress } from '../lib/progress'
+import { NessaBuddy } from '../components/NessaBuddy'
 
 type Props = {
   progress: Progress
@@ -12,9 +13,12 @@ export function ProgressPage({ progress, onTopics }: Props) {
 
   return (
     <main className="page">
-      <div className="section-head">
-        <h2>Seu progresso, Nessa</h2>
-        <p>XP, streak e temas que você já mandou bem. Tudo fica salvo neste navegador.</p>
+      <div className="progress-hero">
+        <div className="section-head">
+          <h2>Seu progresso, Nessa</h2>
+          <p>XP, streak e temas que você já mandou bem. Tudo fica salvo neste navegador.</p>
+        </div>
+        <NessaBuddy size="lg" />
       </div>
       <div className="stats-row">
         <div className="stat">

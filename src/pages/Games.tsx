@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { getTopic, topics, type Topic } from '../data/topics'
 import { ListenButton } from '../components/ListenButton'
 import { ProgressBar } from '../components/ProgressBar'
+import { NessaBuddy } from '../components/NessaBuddy'
 import { shuffle } from '../lib/score'
 import type { Progress } from '../lib/progress'
 import { addXp, markModeDone } from '../lib/progress'
@@ -22,9 +23,12 @@ export function Games({ topicId, progress, onProgress, onBack, onPickTopic }: Pr
   if (!topicId || !topic) {
     return (
       <main className="page">
-        <div className="section-head">
-          <h2>Jogos</h2>
-          <p>Escolhe um tema e treina com escuta, match ou scramble.</p>
+        <div className="section-with-buddy">
+          <div className="section-head">
+            <h2>Jogos</h2>
+            <p>Escolhe um tema e treina com escuta, match ou scramble.</p>
+          </div>
+          <NessaBuddy size="md" />
         </div>
         <div className="topic-grid">
           {topics.map((t) => (

@@ -2,6 +2,7 @@ import { levelLabel, topics } from '../data/topics'
 import { topicArt } from '../data/art'
 import type { Progress } from '../lib/progress'
 import { FaunaField } from '../components/FaunaField'
+import { NessaBuddy } from '../components/NessaBuddy'
 
 type Props = {
   progress: Progress
@@ -12,9 +13,12 @@ export function Topics({ progress, onOpen }: Props) {
   return (
     <main className="page page-with-fauna">
       <FaunaField dense />
-      <div className="section-head">
-        <h2>Escolhe teu tema</h2>
-        <p>Do Arpoador ao dating app — cada tema tem frases, escuta, quiz e prática falando.</p>
+      <div className="section-with-buddy">
+        <div className="section-head">
+          <h2>Escolhe teu tema</h2>
+          <p>Do Arpoador ao dating app — cada tema tem frases, escuta, quiz e prática falando.</p>
+        </div>
+        <NessaBuddy size="md" />
       </div>
       <div className="topic-grid">
         {topics.map((topic) => {

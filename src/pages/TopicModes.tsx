@@ -1,5 +1,6 @@
 import { getTopic } from '../data/topics'
 import { topicArt } from '../data/art'
+import { NessaBuddy } from '../components/NessaBuddy'
 
 type Props = {
   topicId: string
@@ -37,16 +38,21 @@ export function TopicModes({
       <button type="button" className="back-link" onClick={onBack}>
         ← Temas
       </button>
-      {cover && (
-        <div className="topic-hero-art">
-          <img src={cover} alt="" />
+      <div className="section-with-buddy">
+        <div>
+          {cover && (
+            <div className="topic-hero-art">
+              <img src={cover} alt="" />
+            </div>
+          )}
+          <div className="section-head">
+            <h2>
+              {topic.emoji} {topic.title}
+            </h2>
+            <p>{topic.blurb} Faz o ciclo: ouvir → quiz → falar → jogos.</p>
+          </div>
         </div>
-      )}
-      <div className="section-head">
-        <h2>
-          {topic.emoji} {topic.title}
-        </h2>
-        <p>{topic.blurb} Faz o ciclo: ouvir → quiz → falar → jogos.</p>
+        <NessaBuddy size="md" />
       </div>
       <div className="mode-picks">
         <button type="button" className="mode-pick" onClick={onLesson}>
